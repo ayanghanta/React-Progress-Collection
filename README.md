@@ -19,7 +19,7 @@ This project is a simple React app that allows users to add vegetables to a list
 - basics of state and state management
 - children props
 
-### **2. BroBIM: The Gym Bro's BMI Management App 🏋️**
+### **2. BroBMI: The Gym Bro's BMI Management App 🏋️**
 
 BroBIM is a simple React app that helps gym enthusiasts keep track of their Body Mass Index (BMI).
 
