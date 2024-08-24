@@ -1,0 +1,149 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+.app {
+  background-color: rgb(236, 229, 236);
+  max-width: 90vw;
+  /* max-height: 90vh; */
+  margin-top: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 18px;
+  border-radius: 12px;
+  /*  */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  /* gap: 12px; */
+  column-gap: 16px;
+  row-gap: 20px;
+}
+.btn {
+  all: unset;
+  cursor: pointer;
+  font-family: inherit;
+  padding: 4px 8px;
+  background-color: rgb(1, 156, 1);
+  color: #fff;
+  font-weight: 600;
+  border-radius: 4px;
+}
+.item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 2px 10px 2px 10px;
+  background-color: #fff;
+  border-radius: 8px;
+}
+.item .title {
+  font-weight: bold;
+  font-size: 18px;
+}
+.item-img {
+  font-size: 32px;
+}
+.item .price {
+  font-style: italic;
+}
+.item .btn {
+  all: unset;
+  cursor: pointer;
+  font-family: inherit;
+  padding: 4px 8px;
+  margin-left: auto;
+  background-color: #019c01;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 4px;
+  /* justify-self: flex-end; */
+}
+.item-cart-section {
+  display: flex;
+  flex-direction: column;
+  max-height: 60vh;
+  overflow-y: scroll;
+  /* align-items: center; */
+  gap: 6px;
+}
+.item-cart-section::-webkit-scrollbar {
+  display: none;
+}
+.billing-items {
+  font-size: 17px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  gap: 8px;
+}
+.cart-item {
+  display: flex;
+  gap: 12px;
+  margin: 0;
+}
+.billing-section {
+  background-color: #f4fff4;
+  border-radius: 12px;
+  padding: 8px 2dvh;
+  padding-bottom: 20px;
+}
+.billing-section h2 {
+  text-align: center;
+}
+.billing-section h3 {
+  margin-top: 64px;
+}
+.form-cupon {
+  display: flex;
+  align-items: center;
+}
+.form-cupon input {
+  all: unset;
+  background-color: #ccd8ca;
+  color: #000;
+  font-family: inherit;
+  text-transform: uppercase;
+  padding: 4px 8px;
+  border-radius: 4px;
+  /* align-self: flex-end; */
+  /* justify-self: baseline; */
+}
+.ceckout-section {
+  background-color: #ffff;
+  padding: 10px 10px 20px 10px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 10px;
+  grid-column: 1/-1;
+}
+.ceckout-section p {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+.ceckout-section .btn {
+  align-self: center;
+  margin-top: 20px;
+}
+.cart-item .btn {
+  /* justify-content: end; */
+  /* align-self: flex-end; */
+  margin-left: auto;
+}
+.static {
+  text-align: center;
+  font-weight: 700;
+  font-size: 20px;
+  color: rgb(199, 199, 191);
+}
