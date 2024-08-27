@@ -24,6 +24,9 @@ button {
   padding: 8px 16px;
   border-radius: 8px;
 }
+ul {
+  list-style: none;
+}
 /* .app {
 } */
 .header {
@@ -65,7 +68,8 @@ h1 {
   row-gap: 16px;
 }
 
-.goalSet__section input {
+.goalSet__section input,
+.task__add input {
   outline: none;
   border: none;
   font-family: inherit;
@@ -84,7 +88,7 @@ h1 {
 }
 .activity__box {
   display: grid;
-  grid-template-columns: 30% 30% 40%;
+  grid-template-columns: 30% 35% 35%;
 }
 
 .counter {
@@ -123,4 +127,93 @@ h1 {
   display: flex;
   align-items: end;
   gap: 6px;
+}
+
+.btn__add-activity {
+  align-self: center;
+  justify-self: center;
+  background-color: orange;
+  padding: 16px 32px;
+  font-weight: 600;
+  font-size: 24;
+  color: #fff;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  margin-top: 20px;
+}
+.btn__add-activity:hover {
+  transition: 0.3s;
+  background-color: #f9eeff;
+  color: #4d2366;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+.task__add {
+  background-color: #fff6e6;
+  padding: 24px 12px;
+  border-radius: 12px;
+  align-self: flex-start;
+  font-size: 18px;
+}
+
+.task__add form {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  row-gap: 12px;
+  color: #4d2366;
+}
+.task__add form button {
+  justify-self: center;
+  margin-top: 22px;
+  grid-column: 1/-1;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+}
+.task__add form button:hover {
+  background-color: #743499 !important;
+  transition: all 0.3s;
+}
+.task__box {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  background-color: #f3ddff;
+  padding: 24px 16px;
+  border-radius: 12px;
+}
+.task_list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.tag {
+  text-align: center;
+  font-weight: bold;
+  color: #743499;
+  margin-bottom: 16px;
+}
+.task_list li {
+  display: grid;
+  grid-template-columns: 5% 95%;
+  column-gap: 12px;
+  align-items: center;
+}
+.task_list li input[type="checkbox"] {
+  accent-color: #743499;
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+}
+.task_list li p {
+  display: flex;
+  flex-direction: column;
+}
+.description {
+  font-size: 14px;
+  color: #aaa8a8;
+}
+.title {
+  font-size: 18px;
+  font-weight: 600;
 }
