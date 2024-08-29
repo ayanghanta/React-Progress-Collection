@@ -7,10 +7,12 @@ export default function TaskAddForm({ onAddTask }) {
 
   function handleSubmit(e) {
     if (!taskName) return;
+    const id = crypto.randomUUID();
     e.preventDefault();
     const newTask = {
       name: taskName,
       description: taskDesc,
+      id,
       isDone: false,
     };
     onAddTask(newTask);

@@ -10,7 +10,8 @@ import TaskList from "./TaskList";
 const rough = {
   goalName: "bds",
   goalDes: "kjsfkjsbkjsd",
-  taskPD: 9,
+  taskPD: 5,
+  startingDay: Date.now(),
   achiveDate: "2024-08-31",
 };
 
@@ -30,7 +31,7 @@ export default function App() {
             <SetGoal onSetGoal={handleSetGoal} />
           </>
         ) : (
-          <ActivityBox goalDay={goal.achiveDate} />
+          <ActivityBox goal={goal} />
         )}
       </Main>
     </div>
@@ -41,44 +42,89 @@ function Main({ children }) {
   return <div className="main">{children}</div>;
 }
 
-const tempTask = [
+const roughtEverydayTask = [
   {
-    name: "10 twittes",
-    description:
-      "I have no idea i just wnat to make it happen, that's why i decidede to makes this tweets",
-    isDone: false,
-    id: 15,
+    id: "8/28/2024",
+    tasks: [
+      {
+        name: "lunch in product hunt",
+        description:
+          "i want to make $1000.00 MRR form my first product from 1st month with 80% profit",
+        isDone: true,
+        id: 15,
+      },
+    ],
+  },
+  {
+    id: "8/29/2024",
+    tasks: [
+      {
+        name: "go to bye a mac book",
+        description: "i want to use to make my development speed fast",
+        isDone: true,
+        id: 156,
+      },
+      {
+        name: "go to bye a mac book",
+        description: "i want to use to make my development speed fast",
+        isDone: false,
+        id: 151,
+      },
+      {
+        name: "go to bye a mac book",
+        description: "i want to use to make my development speed fast",
+        isDone: true,
+        id: 154,
+      },
+    ],
   },
 ];
 
-function ActivityBox({ goalDay }) {
+function ActivityBox({ goal }) {
   const [isAddTask, setIsAddTask] = useState(false);
-  const [todaysTask, setTodaysTask] = useState(tempTask);
-  const [greatStar, setGreatStar] = useState(0);
-  const [star, setStar] = useState(0);
+  const [everyDaysLog, setEveryDaysLog] = useState(roughtEverydayTask);
 
-  const maxStar = 100;
-  const goalProgress = 100;
-  const taskSkipped = 0;
-
-  function calcStar() {}
+  const todaysTask = everyDaysLog.at(-1).tasks;
+  const todaysDate = new Date().toLocaleDateString(); // Date:8/29/2024
 
   function handleChecked(id) {
-    setTodaysTask(() =>
-      todaysTask.map((task) =>
-        task.id === id ? { ...task, isDone: !task.isDone } : task
+    const updatedTask = todaysTask.map((task) =>
+      task.id === id ? { ...task, isDone: !task.isDone } : task
+    );
+    setEveryDaysLog((eachDay) =>
+      eachDay.map((day) =>
+        day.id === todaysDate ? { ...day, tasks: updatedTask } : day
       )
     );
+    // setTodaysTask(() =>
+    //   todaysTask.map((task) =>
+    //     task.id === id ? { ...task, isDone: !task.isDone } : task
+    //   )
+    // );
   }
 
   function handleAddTask(task) {
-    setTodaysTask((tasks) => [...tasks, task]);
+    if (everyDaysLog.find((eachDay) => eachDay.id === todaysDate)) {
+      // if used add task in same day and alreday there is todays log then it goes into this
+      setEveryDaysLog((eachDay) =>
+        eachDay.map((day) =>
+          day.id === todaysDate ? { ...day, tasks: [...todaysTask, task] } : day
+        )
+      );
+    } else {
+      const newDayLog = {
+        id: todaysDate,
+        tasks: [task],
+      };
+      setEveryDaysLog((eachDay) => [...eachDay, newDayLog]);
+    }
+
     setIsAddTask(false);
   }
 
   return (
     <div className="activity__box">
-      <Stats />
+      <Stats everyDaysLog={everyDaysLog} goalObj={goal} />
 
       <div className="task__box">
         <TaskList tasksList={todaysTask} onChecked={handleChecked} />
@@ -91,7 +137,7 @@ function ActivityBox({ goalDay }) {
         </div>
       </div>
 
-      <Counter goalDay={goalDay} />
+      <Counter goalDay={goal.achiveDate} />
       {/* <div>previous record</div> */}
     </div>
   );
