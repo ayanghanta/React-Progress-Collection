@@ -1,7 +1,6 @@
-import { Children } from "react";
 import HiddenComponent from "./HiddenComponent";
 
-export default function Task({ task, onChecked }) {
+export default function Task({ task, onChecked, onDelete }) {
   return (
     <li>
       <input
@@ -15,6 +14,9 @@ export default function Task({ task, onChecked }) {
         <HiddenComponent displaydWord={5}>{task.description}</HiddenComponent>
         {/* <span className="description"></span> */}
       </div>
+      <span className="btn-delete" onClick={() => onDelete(task.id)}>
+        ❌
+      </span>
     </li>
   );
 }

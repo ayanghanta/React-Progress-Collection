@@ -6,9 +6,9 @@ export default function TaskAddForm({ onAddTask }) {
   const [taskDesc, setTaskDesc] = useState("");
 
   function handleSubmit(e) {
-    if (!taskName) return;
     const id = crypto.randomUUID();
     e.preventDefault();
+    if (!taskName) return;
     const newTask = {
       name: taskName,
       description: taskDesc,

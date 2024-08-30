@@ -25,6 +25,7 @@ export default function SetGoal({ onSetGoal }) {
         <label>🏆 What's Your Big Dream?</label>
         <input
           type="text"
+          required
           value={goalName}
           onChange={(e) => setGoalName(e.target.value)}
         />
@@ -32,6 +33,7 @@ export default function SetGoal({ onSetGoal }) {
         <label>💡 Your goal description</label>
         <input
           type="text"
+          required
           value={goalDes}
           onChange={(e) => setGoalDes(e.target.value)}
         />
@@ -40,6 +42,7 @@ export default function SetGoal({ onSetGoal }) {
         <input
           type="number"
           min="0"
+          required
           value={taskPD}
           onChange={(e) => setTaskPD(+e.target.value)}
         />
@@ -47,6 +50,8 @@ export default function SetGoal({ onSetGoal }) {
         <label>📅 Goal Completion Date</label>
         <input
           type="date"
+          min={new Date().toISOString().split("T")[0]}
+          required
           value={achiveDate}
           onChange={(e) => setAchiveDate(e.target.value)}
         />

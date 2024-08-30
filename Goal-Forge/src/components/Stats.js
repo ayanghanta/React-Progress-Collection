@@ -74,7 +74,7 @@ export default function Stats({ everyDaysLog, goalObj }) {
       </div>
       <div>
         <span>🎯 Goal Progress:</span>
-        <span>{Math.floor((totalEarnedStar * 100) / maxStar)}%</span>
+        <span>{((totalEarnedStar * 100) / maxStar).toFixed(2)}%</span>
       </div>
       <div>
         <span>🚫 Tasks Skipped:</span>

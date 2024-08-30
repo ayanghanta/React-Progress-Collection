@@ -24,6 +24,12 @@ button {
   padding: 8px 16px;
   border-radius: 8px;
 }
+.btn-delete {
+  cursor: pointer;
+  font-weight: bold;
+  color: red;
+  font-size: 12px;
+}
 ul {
   list-style: none;
 }
@@ -205,8 +211,10 @@ h1 {
   margin-bottom: 16px;
 }
 .task_list li {
+  width: 100%;
   display: grid;
-  grid-template-columns: 5% 95%;
+  /* grid-template-columns: 5% 92% 3%; */
+  grid-template-columns: 5fr 92fr 3fr;
   column-gap: 12px;
   align-items: center;
 }
@@ -228,3 +236,5 @@ h1 {
   font-size: 18px;
   font-weight: 600;
 }
+
+/* ADD SOME RESPONSIVENESS */
