@@ -1,6 +1,14 @@
-## My React Learning Journey ⚛️
+# My React Learning Journey ⚛️
 
 This repository serves as a showcase of my React learning journey. I'll continue to add more projects as I progress.
+
+## All Projects 🗃️
+
+| Project Name                                           | Description                                     | Live Demo                                 |
+| ------------------------------------------------------ | ----------------------------------------------- | ----------------------------------------- |
+| [Add Vege🥕](#1-add-vege)                              | A simple app to add vegetables to a list.       | [Add Vege](https://add-vege.netlify.app/) |
+| [BroBMI🏋️](#2-brobmi-the-gym-bros-bmi-management-app-) | Track your Body Mass Index (BMI) with style.    | [BroBMI](https://brobmi.netlify.app/)     |
+| [GoalForge🎯](#3-goalforge-your-path-to-achievement-)  | Set goals, track progress, and achieve success. | [GoalForge](#)                            |
 
 ### **1. Add Vege🥕**
 
@@ -33,6 +41,32 @@ BroBIM is a simple React app that helps gym enthusiasts keep track of their Body
 - Get categorized based on your BMI (Underweight, Normal, Overweight, Obese)
 - Update your height and weight as you progress
 - All information displayed in a sleek and stylish card design
+
+**🧠Used concepts:**
+
+- Components and Props
+- JSX
+- Conditional Rendering
+- React Fragments
+- Controlled Elements
+- State Management
+- Children Props
+- React state hooks
+- React effect hooks
+
+### **3. GoalForge: Your Path to Achievement 🎯**
+
+**GoalForge** is a motivating React app designed to help you track and achieve your goals by setting a deadline and completing daily tasks.
+
+**🚀Live link:** [GoalForge](#)
+
+**⚙️Features:**
+
+- Set a goal with a target date and description
+- Define daily tasks required to achieve the goal
+- Countdown timer displaying days, hours, and minutes until the goal's deadline
+- Earn stars for each completed task and a special star for completing all daily tasks
+- Track your progress with a dynamic percentage indicator
 
 **🧠Used concepts:**
 
