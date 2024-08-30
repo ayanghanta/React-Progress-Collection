@@ -4,11 +4,11 @@ This repository serves as a showcase of my React learning journey. I'll continue
 
 ## All Projects 🗃️
 
-| Project Name                                           | Description                                     | Live Demo                                 |
-| ------------------------------------------------------ | ----------------------------------------------- | ----------------------------------------- |
-| [Add Vege🥕](#1-add-vege)                              | A simple app to add vegetables to a list.       | [Add Vege](https://add-vege.netlify.app/) |
-| [BroBMI🏋️](#2-brobmi-the-gym-bros-bmi-management-app-) | Track your Body Mass Index (BMI) with style.    | [BroBMI](https://brobmi.netlify.app/)     |
-| [GoalForge🎯](#3-goalforge-your-path-to-achievement-)  | Set goals, track progress, and achieve success. | [GoalForge](#)                            |
+| Project Name                                           | Description                                     | Live Demo                                    |
+| ------------------------------------------------------ | ----------------------------------------------- | -------------------------------------------- |
+| [Add Vege🥕](#1-add-vege)                              | A simple app to add vegetables to a list.       | [Add Vege](https://add-vege.netlify.app/)    |
+| [BroBMI🏋️](#2-brobmi-the-gym-bros-bmi-management-app-) | Track your Body Mass Index (BMI) with style.    | [BroBMI](https://brobmi.netlify.app/)        |
+| [GoalForge🎯](#3-goalforge-your-path-to-achievement-)  | Set goals, track progress, and achieve success. | [GoalForge](https://goal-forge.netlify.app/) |
 
 ### **1. Add Vege🥕**
 
@@ -58,7 +58,7 @@ BroBIM is a simple React app that helps gym enthusiasts keep track of their Body
 
 **GoalForge** is a motivating React app designed to help you track and achieve your goals by setting a deadline and completing daily tasks.
 
-**🚀Live link:** [GoalForge](#)
+**🚀Live link:** [GoalForge](https://goal-forge.netlify.app/)
 
 **⚙️Features:**
 
