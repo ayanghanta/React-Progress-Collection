@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import HeaderSection from "./HeaderSection";
 import Intro from "./Intro";
 import SetGoal from "./SetGoal";
@@ -6,32 +6,47 @@ import Counter from "./Counter";
 import Stats from "./Stats";
 import TaskAddForm from "./TaskAddForm";
 import TaskList from "./TaskList";
+import HiddenComponent from "./HiddenComponent";
 
-const rough = {
-  goalName: "bds",
-  goalDes: "kjsfkjsbkjsd",
-  taskPD: 5,
-  startingDay: Date.now(),
-  achiveDate: "2024-08-31",
-};
+// const rough = {
+//   goalName: "bds",
+//   goalDes: "kjsfkjsbkjsd",
+//   taskPD: 5,
+//   startingDay: Date.now(),
+//   achiveDate: "2024-08-31",
+// };
 
 export default function App() {
-  const [goal, setGoal] = useState(rough);
+  const [goal, setGoal] = useState({});
+
+  // GET GOAL OBJECT FORM LOCAL STORAGE
+  useEffect(function () {
+    const stotedGoalObj = JSON.parse(localStorage.getItem("goal"));
+
+    if (!stotedGoalObj) return setGoal({});
+    setGoal(stotedGoalObj);
+  }, []);
 
   function handleSetGoal(newGoal) {
     setGoal(newGoal);
+
+    //FIXME: STORED THE GOAL OBJECT TO THE LOCAL STORAGE
+    // useEffect(function () {
+    //   localStorage.setItem("goal", newGoal);
+    // }, []);
+    localStorage.setItem("goal", JSON.stringify(newGoal));
   }
   return (
     <div className="app">
       <HeaderSection />
       <Main>
-        {goal.length === 0 ? (
+        {goal.goalName ? (
+          <ActivityBox goal={goal} />
+        ) : (
           <>
             <Intro />
             <SetGoal onSetGoal={handleSetGoal} />
           </>
-        ) : (
-          <ActivityBox goal={goal} />
         )}
       </Main>
     </div>
@@ -42,81 +57,62 @@ function Main({ children }) {
   return <div className="main">{children}</div>;
 }
 
-const roughtEverydayTask = [
-  {
-    id: "8/28/2024",
-    tasks: [
-      {
-        name: "lunch in product hunt",
-        description:
-          "i want to make $1000.00 MRR form my first product from 1st month with 80% profit",
-        isDone: true,
-        id: 15,
-      },
-    ],
-  },
-  {
-    id: "8/29/2024",
-    tasks: [
-      {
-        name: "go to bye a mac book",
-        description: "i want to use to make my development speed fast",
-        isDone: true,
-        id: 156,
-      },
-      {
-        name: "go to bye a mac book",
-        description: "i want to use to make my development speed fast",
-        isDone: false,
-        id: 151,
-      },
-      {
-        name: "go to bye a mac book",
-        description: "i want to use to make my development speed fast",
-        isDone: true,
-        id: 154,
-      },
-    ],
-  },
-];
-
 function ActivityBox({ goal }) {
   const [isAddTask, setIsAddTask] = useState(false);
-  const [everyDaysLog, setEveryDaysLog] = useState(roughtEverydayTask);
+  const [everyDaysLog, setEveryDaysLog] = useState([]);
 
-  const todaysTask = everyDaysLog.at(-1).tasks;
+  useEffect(function () {
+    // GET EVERY DAYS TASKS LIST FORM LOCAL STORAGE
+    const storedEveryDayLog = JSON.parse(localStorage.getItem("allTasks"));
+
+    if (!storedEveryDayLog) return setEveryDaysLog([]);
+
+    setEveryDaysLog(storedEveryDayLog);
+  }, []);
+
   const todaysDate = new Date().toLocaleDateString(); // Date:8/29/2024
+
+  let todaysTask;
+  if (everyDaysLog.find((eachDay) => eachDay.id === todaysDate)) {
+    todaysTask = everyDaysLog.at(-1).tasks;
+  } else {
+    todaysTask = [];
+  }
 
   function handleChecked(id) {
     const updatedTask = todaysTask.map((task) =>
       task.id === id ? { ...task, isDone: !task.isDone } : task
     );
-    setEveryDaysLog((eachDay) =>
-      eachDay.map((day) =>
-        day.id === todaysDate ? { ...day, tasks: updatedTask } : day
-      )
+    const updatedAllTasks = everyDaysLog.map((day) =>
+      day.id === todaysDate ? { ...day, tasks: updatedTask } : day
     );
-    // setTodaysTask(() =>
-    //   todaysTask.map((task) =>
-    //     task.id === id ? { ...task, isDone: !task.isDone } : task
-    //   )
-    // );
+    localStorage.setItem("allTasks", JSON.stringify(updatedAllTasks));
+    setEveryDaysLog(updatedAllTasks);
   }
 
   function handleAddTask(task) {
     if (everyDaysLog.find((eachDay) => eachDay.id === todaysDate)) {
-      // if used add task in same day and alreday there is todays log then it goes into this
-      setEveryDaysLog((eachDay) =>
-        eachDay.map((day) =>
-          day.id === todaysDate ? { ...day, tasks: [...todaysTask, task] } : day
-        )
+      // IF USED ADD TASK IN THE SAME DAY AND ALREADY THERE IS TODAYS LOG THE IT GOES INTO THIS
+
+      const updatedAllTasks = everyDaysLog.map((day) =>
+        day.id === todaysDate ? { ...day, tasks: [...todaysTask, task] } : day
       );
+
+      // SOTED TO THE LOCAL STORAGE
+      localStorage.setItem("allTasks", JSON.stringify(updatedAllTasks));
+
+      // SET SATATE
+      setEveryDaysLog(updatedAllTasks);
     } else {
       const newDayLog = {
         id: todaysDate,
         tasks: [task],
       };
-      setEveryDaysLog((eachDay) => [...eachDay, newDayLog]);
+      // setEveryDaysLog((eachDay) => [...eachDay, newDayLog]);
+
+      const updatedAllTasks = [...everyDaysLog, newDayLog];
+      localStorage.setItem("allTasks", JSON.stringify(updatedAllTasks));
+      setEveryDaysLog(updatedAllTasks);
     }
 
     setIsAddTask(false);
@@ -137,8 +133,57 @@ function ActivityBox({ goal }) {
         </div>
       </div>
 
-      <Counter goalDay={goal.achiveDate} />
+      <div className="couner_box">
+        <p>
+          🚩 Goal to achive <strong>{goal.goalName}</strong>
+        </p>
+        <Counter goalDay={goal.achiveDate} />
+
+        <HiddenComponent>📃Description:{goal.goalDes}</HiddenComponent>
+
+        <p>
+          💪 I am going to complete {goal.taskPD} task / day to achive my goal
+        </p>
+      </div>
       {/* <div>previous record</div> */}
     </div>
   );
 }
+
+// const roughtEverydayTask = [
+//   {
+//     id: "8/28/2024",
+//     tasks: [
+//       {
+//         name: "lunch in product hunt",
+//         description:
+//           "i want to make $1000.00 MRR form my first product from 1st month with 80% profit",
+//         isDone: true,
+//         id: 15,
+//       },
+//     ],
+//   },
+//   {
+//     id: "8/29/2024",
+//     tasks: [
+//       {
+//         name: "go to bye a mac book",
+//         description: "i want to use to make my development speed fast",
+//         isDone: true,
+//         id: 156,
+//       },
+//       {
+//         name: "go to bye a mac book",
+//         description: "i want to use to make my development speed fast",
+//         isDone: false,
+//         id: 151,
+//       },
+//       {
+//         name: "go to bye a mac book",
+//         description: "i want to use to make my development speed fast",
+//         isDone: true,
+//         id: 154,
+//       },
+//     ],
+//   },
+// ];

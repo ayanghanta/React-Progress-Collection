@@ -90,9 +90,20 @@ h1 {
   display: grid;
   grid-template-columns: 30% 35% 35%;
 }
-
+.couner_box {
+  padding-left: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.couner_box p {
+  align-self: flex-start;
+  font-size: 18px;
+  font-weight: 500;
+  color: #555;
+}
 .counter {
-  justify-self: end;
+  align-self: center;
   display: flex;
   gap: 10px;
   background-color: #873db3;
@@ -103,7 +114,6 @@ h1 {
   font-weight: bold;
   border-radius: 12px;
   box-shadow: 0 0 10px 0 #691c96 inset;
-  align-self: flex-start;
 }
 .stats__container {
   align-self: flex-start;
@@ -177,6 +187,7 @@ h1 {
 .task__box {
   display: flex;
   flex-direction: column;
+  align-self: flex-start;
   gap: 24px;
   background-color: #f3ddff;
   padding: 24px 16px;
@@ -205,7 +216,7 @@ h1 {
   width: 20px;
   cursor: pointer;
 }
-.task_list li p {
+.task_list li div {
   display: flex;
   flex-direction: column;
 }

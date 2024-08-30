@@ -1,3 +1,6 @@
+import { Children } from "react";
+import HiddenComponent from "./HiddenComponent";
+
 export default function Task({ task, onChecked }) {
   return (
     <li>
@@ -6,10 +9,12 @@ export default function Task({ task, onChecked }) {
         checked={task.isDone}
         onChange={() => onChecked(task.id)}
       />
-      <p style={task.isDone ? { textDecoration: "line-through" } : {}}>
+
+      <div style={task.isDone ? { textDecoration: "line-through" } : {}}>
         <span className="title">{task.name}</span>
-        <span className="description">{task.description}</span>
-      </p>
+        <HiddenComponent displaydWord={5}>{task.description}</HiddenComponent>
+        {/* <span className="description"></span> */}
+      </div>
     </li>
   );
 }

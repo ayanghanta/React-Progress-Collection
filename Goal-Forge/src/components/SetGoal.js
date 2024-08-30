@@ -14,8 +14,8 @@ export default function SetGoal({ onSetGoal }) {
       goalDes,
       taskPD,
       achiveDate,
+      startingDay: Date.now(),
     };
-    console.log(newGoal);
     onSetGoal(newGoal);
   }
 
