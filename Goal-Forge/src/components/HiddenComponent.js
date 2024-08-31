@@ -5,12 +5,12 @@ export default function HiddenComponent({
   displaydWord = 10,
   expanded = false,
   color = "#748ffc",
-  size = 14,
+  size = 1.4,
 }) {
   const [isExpanded, setIsExpanded] = useState(expanded);
 
   const btnStyle = {
-    fontSize: `${size}px`,
+    fontSize: `${size}rem`,
     cursor: "pointer",
     color: `${color}`,
   };

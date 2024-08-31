@@ -8,7 +8,7 @@ export default function Button({
   const btnStyle = {
     color,
     backgroundColor: bgColor,
-    fontSize: `${size}px`,
+    fontSize: `${size / 10}rem`,
   };
   return (
     <button className={`btn ${className}`} style={btnStyle}>

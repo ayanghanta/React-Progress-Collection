@@ -8,12 +8,17 @@
 primary color: #c157ff, 
 
 */
+
+html {
+  font-size: 62.5%;
+}
 body {
   font-family: "Bricolage Grotesque", sans-serif;
 }
 p {
   line-height: 1.4;
   color: #333;
+  font-size: 1.6rem;
 }
 button {
   all: unset;
@@ -21,14 +26,14 @@ button {
   color: #fff;
   cursor: pointer;
   justify-self: center;
-  padding: 8px 16px;
-  border-radius: 8px;
+  padding: 0.8rem 1.6rem;
+  border-radius: 0.8rem;
 }
 .btn-delete {
   cursor: pointer;
   font-weight: bold;
   color: red;
-  font-size: 12px;
+  font-size: 1.2rem;
 }
 ul {
   list-style: none;
@@ -37,41 +42,41 @@ ul {
 } */
 .header {
   background-color: #f9eeff;
-  padding: 18px 0;
-  margin-bottom: 48px;
+  padding: 1.8rem 0;
+  margin-bottom: 4.8rem;
 }
 .main {
   margin-left: auto;
   margin-right: auto;
-  max-width: 1200px;
-  padding: 0 12px;
+  max-width: 120rem;
+  padding: 0 1.2rem;
 }
 h1 {
   text-align: center;
-  font-size: 48px;
+  font-size: 4.8rem;
   color: #9a46cc;
 }
 .intro {
-  margin-bottom: 64px;
+  margin-bottom: 6.4rem;
 }
 .intro h2 {
-  margin-bottom: 12px;
-  font-size: 32px;
+  margin-bottom: 1.2rem;
+  font-size: 3.2rem;
   color: #333;
 }
 .intro p {
-  font-size: 22px;
+  font-size: 2.2rem;
 }
 .goalSet__section {
-  width: 600px;
+  width: 60rem;
   margin-left: auto;
   margin-right: auto;
 }
 .goalSet__section form {
-  font-size: 20px;
+  font-size: 2rem;
   display: grid;
   grid-template-columns: 50% 50%;
-  row-gap: 16px;
+  row-gap: 1.6rem;
 }
 
 .goalSet__section input,
@@ -80,12 +85,12 @@ h1 {
   border: none;
   font-family: inherit;
   font-size: inherit;
-  border: 2px solid #4d2366a1;
-  border-radius: 4px;
-  padding: 2px 8px;
+  border: 0.2rem solid #4d2366a1;
+  border-radius: 0.4rem;
+  padding: 0.2rem 0.8rem;
 }
 .goalSet__section button {
-  margin-top: 42px;
+  margin-top: 4.2rem;
   grid-column: 1/-1;
 }
 .goalSet__section button:hover {
@@ -95,96 +100,98 @@ h1 {
 .activity__box {
   display: grid;
   grid-template-columns: 30% 35% 35%;
+  row-gap: 14rem;
+  margin-bottom: 4.8rem;
 }
 .couner_box {
-  padding-left: 24px;
+  padding-left: 2.4rem;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 1.6rem;
 }
 .couner_box p {
   align-self: flex-start;
-  font-size: 18px;
+  font-size: 1.8rem;
   font-weight: 500;
   color: #555;
 }
 .counter {
   align-self: center;
   display: flex;
-  gap: 10px;
+  gap: 1rem;
   background-color: #873db3;
   color: #fff;
   align-items: center;
-  padding: 20px 28px;
-  font-size: 18px;
+  padding: 2rem 2.8rem;
+  font-size: 1.8rem;
   font-weight: bold;
-  border-radius: 12px;
-  box-shadow: 0 0 10px 0 #691c96 inset;
+  border-radius: 1.2rem;
+  box-shadow: 0 0 1rem 0 #691c96 inset;
 }
 .stats__container {
   align-self: flex-start;
-  font-size: 18px;
+  font-size: 1.8rem;
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  margin-bottom: 20px;
+  gap: 0.8rem;
+  margin-bottom: 2rem;
   background-color: #9a46cc;
   color: #fff;
   justify-self: start;
-  padding: 16px 32px;
-  border-radius: 12px;
+  padding: 1.6rem 3.2rem;
+  border-radius: 1.2rem;
 }
 .stats__container p {
   font-weight: bold;
   color: #fff;
-  margin-bottom: 12px;
+  margin-bottom: 1.2rem;
 }
 .stats__container div {
   display: flex;
   align-items: end;
-  gap: 6px;
+  gap: 0.6rem;
 }
 
 .btn__add-activity {
   align-self: center;
   justify-self: center;
   background-color: orange;
-  padding: 16px 32px;
+  padding: 1.6rem 3.2rem;
   font-weight: 600;
-  font-size: 24;
+  font-size: 1.6rem;
   color: #fff;
-  border-radius: 12px;
+  border-radius: 1.2rem;
   cursor: pointer;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-  margin-top: 20px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0rem 0.2rem 0.8rem 0rem;
+  margin-top: 2rem;
 }
 .btn__add-activity:hover {
   transition: 0.3s;
   background-color: #f9eeff;
   color: #4d2366;
-  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
-    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0rem 0.6rem 2.4rem 0rem,
+    rgba(0, 0, 0, 0.08) 0rem 0rem 0rem 0.1rem;
 }
 .task__add {
   background-color: #fff6e6;
-  padding: 24px 12px;
-  border-radius: 12px;
+  padding: 2.4rem 1.2rem;
+  border-radius: 1.2rem;
   align-self: flex-start;
-  font-size: 18px;
+  font-size: 1.8rem;
 }
 
 .task__add form {
   display: grid;
   grid-template-columns: 40% 60%;
-  row-gap: 12px;
+  row-gap: 1.2rem;
   color: #4d2366;
 }
 .task__add form button {
   justify-self: center;
-  margin-top: 22px;
+  margin-top: 2.2rem;
   grid-column: 1/-1;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
-    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0rem 0.1rem 0.3rem 0rem,
+    rgba(0, 0, 0, 0.06) 0rem 0.1rem 0.2rem 0rem;
 }
 .task__add form button:hover {
   background-color: #743499 !important;
@@ -194,34 +201,35 @@ h1 {
   display: flex;
   flex-direction: column;
   align-self: flex-start;
-  gap: 24px;
+  gap: 2.4rem;
   background-color: #f3ddff;
-  padding: 24px 16px;
-  border-radius: 12px;
+  padding: 2.4rem 1.6rem;
+  border-radius: 1.2rem;
 }
 .task_list {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 1.6rem;
 }
 .tag {
   text-align: center;
   font-weight: bold;
   color: #743499;
-  margin-bottom: 16px;
+  margin-bottom: 1.6rem;
 }
 .task_list li {
   width: 100%;
   display: grid;
   /* grid-template-columns: 5% 92% 3%; */
   grid-template-columns: 5fr 92fr 3fr;
-  column-gap: 12px;
+  column-gap: 1.2rem;
   align-items: center;
 }
-.task_list li input[type="checkbox"] {
+.task_list li input[type="checkbox"],
+.history_card_list li input[type="Checkbox"] {
   accent-color: #743499;
-  height: 20px;
-  width: 20px;
+  height: 2rem;
+  width: 2rem;
   cursor: pointer;
 }
 .task_list li div {
@@ -229,12 +237,71 @@ h1 {
   flex-direction: column;
 }
 .description {
-  font-size: 14px;
+  font-size: 1.4rem;
   color: #aaa8a8;
 }
 .title {
-  font-size: 18px;
+  font-size: 1.8rem;
   font-weight: 600;
 }
 
+.history_card_list {
+  grid-column: 1/-1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 2.4rem;
+}
+.history_card_list ul li {
+  display: grid;
+  grid-template-columns: 5fr 95fr;
+  column-gap: 1.2rem;
+  align-items: center;
+}
+.history_card_list ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  align-items: center;
+  background-color: #eee;
+  padding: 1.2rem 2rem;
+  border-radius: 1.2rem;
+}
+.history_date {
+  font-weight: bold;
+}
+
+.history_card_list p {
+  color: #666;
+}
+.history_card_list .title {
+  color: #888;
+}
+.history_card_list li div {
+  display: flex;
+  flex-direction: column;
+}
 /* ADD SOME RESPONSIVENESS */
+@media (max-width: 67em) {
+  html {
+    font-size: 56.25%;
+  }
+}
+/* at 950px */
+@media (max-width: 59em) {
+  html {
+    font-size: 56.25%;
+  }
+  .activity__box {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2.4rem;
+  }
+  .task__box {
+    grid-row: 2/-2;
+  }
+  .stats__container {
+    justify-self: center;
+  }
+  .couner_box {
+    justify-self: center;
+  }
+}
