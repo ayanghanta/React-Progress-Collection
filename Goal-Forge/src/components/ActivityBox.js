@@ -5,59 +5,59 @@ import TaskAddForm from "./TaskAddForm";
 import TaskList from "./TaskList";
 import HiddenComponent from "./HiddenComponent";
 import HistoryCardList from "./HistoryCradList";
-const roughtEverydayTask = [
-  {
-    id: "8/28/2024",
-    tasks: [
-      {
-        name: "lunch in product hunt",
-        description:
-          "i want to make $1000.00 MRR form my first product from 1st month with 80% profit",
-        isDone: true,
-        id: 15,
-      },
-      {
-        name: "lunch in product hunt",
-        description:
-          "i want to make $1000.00 MRR form my first product from 1st month with 80% profit",
-        isDone: true,
-        id: 1577,
-      },
-    ],
-  },
-  {
-    id: "8/29/2024",
-    tasks: [
-      {
-        name: "go to bye a mac book",
-        description: "i want to use to make my development speed fast",
-        isDone: true,
-        id: 156,
-      },
-      {
-        name: "go to bye a mac book",
-        description: "i want to use to make my development speed fast",
-        isDone: false,
-        id: 151,
-      },
-      {
-        name: "go to bye a mac book",
-        description: "i want to use to make my development speed fast",
-        isDone: true,
-        id: 154,
-      },
-    ],
-  },
-];
+// const roughtEverydayTask = [
+//   {
+//     id: "8/28/2024",
+//     tasks: [
+//       {
+//         name: "lunch in product hunt",
+//         description:
+//           "i want to make $1000.00 MRR form my first product from 1st month with 80% profit",
+//         isDone: true,
+//         id: 15,
+//       },
+//       {
+//         name: "lunch in product hunt",
+//         description:
+//           "i want to make $1000.00 MRR form my first product from 1st month with 80% profit",
+//         isDone: true,
+//         id: 1577,
+//       },
+//     ],
+//   },
+//   {
+//     id: "8/29/2024",
+//     tasks: [
+//       {
+//         name: "go to bye a mac book",
+//         description: "i want to use to make my development speed fast",
+//         isDone: true,
+//         id: 156,
+//       },
+//       {
+//         name: "go to bye a mac book",
+//         description: "i want to use to make my development speed fast",
+//         isDone: false,
+//         id: 151,
+//       },
+//       {
+//         name: "go to bye a mac book",
+//         description: "i want to use to make my development speed fast",
+//         isDone: true,
+//         id: 154,
+//       },
+//     ],
+//   },
+// ];
 
 export default function ActivityBox({ goal }) {
   const [isAddTask, setIsAddTask] = useState(false);
-  // const [everyDaysLog, setEveryDaysLog] = useState(function () {
-  //   const storedEveryDayLog = JSON.parse(localStorage.getItem("allTasks"));
-  //   if (!storedEveryDayLog) return [];
-  //   return storedEveryDayLog;
-  // });
-  const [everyDaysLog, setEveryDaysLog] = useState(roughtEverydayTask);
+  const [everyDaysLog, setEveryDaysLog] = useState(function () {
+    const storedEveryDayLog = JSON.parse(localStorage.getItem("allTasks"));
+    if (!storedEveryDayLog) return [];
+    return storedEveryDayLog;
+  });
+  // const [everyDaysLog, setEveryDaysLog] = useState(roughtEverydayTask);
 
   const todaysDate = new Date().toLocaleDateString(); // Date:8/29/2024
 
