@@ -26,9 +26,9 @@ function HistoryCard({ date, children }) {
 function HistoryTaskItems({ task }) {
   return (
     <li>
-      <input type="checkbox" checked={true} disabled />
+      <input type="checkbox" checked={task.isDone} disabled />
 
-      <div style={true ? { textDecoration: "line-through" } : {}}>
+      <div style={task.isDone ? { textDecoration: "line-through" } : {}}>
         <span className="title">{task.name}</span>
         <HiddenComponent displaydWord={5}>{task.description}</HiddenComponent>
       </div>
