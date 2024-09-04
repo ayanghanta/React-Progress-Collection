@@ -250,6 +250,7 @@ h1 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   column-gap: 2.4rem;
+  row-gap: 3.2rem;
 }
 .history_card_list ul li {
   display: grid;
