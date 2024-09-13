@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Outfit", sans-serif;
+  background-color: #f6f8fe;
+}
+.container {
+  max-width: 130rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1.2rem;
+}
+.mainConatiner {
+  min-height: 60vh;
+}

@@ -1,0 +1,18 @@
+.headerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2.4rem 0;
+}
+.headerContainer ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+.headerContainer ul li {
+  font-size: 1.8rem;
+  color: #6787e7;
+  text-decoration: none;
+  font-family: inherit;
+  cursor: pointer;
+}
