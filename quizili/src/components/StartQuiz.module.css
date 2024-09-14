@@ -1,0 +1,11 @@
+.startQuiz {
+  margin-top: 9.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4.2rem;
+  align-items: center;
+}
+.startQuiz h2 {
+  font-size: 3.6rem;
+  color: #6356e5;
+}

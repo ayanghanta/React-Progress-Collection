@@ -1,13 +1,5 @@
-import HeroSection from "./HeroSection";
-import Topics from "./Topics";
-
-function Main() {
-  return (
-    <div>
-      <HeroSection />
-      <Topics />
-    </div>
-  );
+function Main({ children }) {
+  return <div className="mainConatiner">{children}</div>;
 }
 
 export default Main;

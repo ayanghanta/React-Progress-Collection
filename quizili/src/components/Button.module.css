@@ -1,0 +1,25 @@
+.btn {
+  all: unset;
+  font-family: inherit;
+  font-weight: 500;
+  padding: 0.8rem 1.6rem;
+  border-radius: 0.8rem;
+}
+.next {
+  font-size: 2rem;
+  background-color: #594dce;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.next:hover {
+  background-color: #453ca0;
+  transition: all 0.3s;
+}
+.start {
+  font-size: 2.4rem;
+  background-color: #594dce;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s;
+}
