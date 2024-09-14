@@ -1,9 +1,20 @@
 import styles from "./Loader.module.css";
 import useGemini from "../hooks/useGemini";
-import { useEffect } from "react";
 
-function Loader() {
-  const { question } = useGemini();
+function Loader({
+  topic,
+  numQuestions,
+  diffLabel,
+  poinstPerQuestion,
+  dispatch,
+}) {
+  const { question } = useGemini(
+    topic,
+    numQuestions,
+    diffLabel,
+    poinstPerQuestion,
+    dispatch
+  );
   console.log(question);
   return (
     <div className={styles.loaderContainer}>

@@ -1,0 +1,22 @@
+.questionContainer {
+  margin-top: 6.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 6.4rem;
+  align-items: center;
+}
+.questionContainer h2 {
+  font-size: 3.2rem;
+  font-weight: 500;
+  color: #4f45b7;
+  text-align: center;
+}
+.optionsContainer {
+  max-width: 90%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 6.4rem;
+  row-gap: 2.4rem;
+  /* align-items: center; */
+  justify-content: center;
+}

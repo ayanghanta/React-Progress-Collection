@@ -59,3 +59,46 @@ body {
   text-align: center;
   cursor: pointer;
 }
+.quizCustomizeContainer .selected {
+  transition: all 0.3s;
+  background-color: #453ca0;
+  color: #fff;
+}
+.optionBtn {
+  text-align: center;
+  padding: 2.4rem 3.2rem;
+  font-size: 2.4rem;
+  font-weight: 400;
+  background-color: #ced4da;
+  border: 2px solid #ced4da;
+  color: #333;
+  border-radius: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+}
+.optionBtn:hover {
+  border: 2px solid #adb5bd;
+  transition: all 0.3s;
+  transform: scale(1.15);
+}
+.optionBtn[disabled] {
+  transform: unset;
+  border: unset;
+}
+.optionBtn[disabled]:hover {
+  cursor: not-allowed;
+}
+.selectedOption {
+  transform: scale(1.15) !important;
+}
+.right {
+  background-color: #38b000 !important;
+  border: 2px solid #38b000;
+  color: #fff;
+}
+.wrong {
+  background-color: #f77f00 !important;
+  border: 2px solid #f77f00;
+}

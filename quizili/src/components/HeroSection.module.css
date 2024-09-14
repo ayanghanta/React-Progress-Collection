@@ -11,9 +11,11 @@
   margin-bottom: 1.6rem;
   color: #594dce;
   letter-spacing: -0.1px;
+  text-align: center;
 }
 .heroSection p {
   font-size: 1.8rem;
   color: #666;
   line-height: 1.5;
+  text-align: center;
 }
