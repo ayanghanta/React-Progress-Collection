@@ -55,7 +55,13 @@ export default function useGemini(
     },
   });
 
-  const prompt = `Generate a quiz of ${numQuestions} questions on the topic of "${topic}" with a difficulty level of "${diffLabel}". Each question should have 4 options, with only one correct answer. Provide ${poinstPerQuestion} for each question.**it is very very important that The correct answer should be specified as an index (0, 1, 2, or 3) within the array of options Ensure that the specified correctOption index corresponds to the actual correct answer among the provided options and re-check.**`;
+  const prompt = `Generate a quiz of ${numQuestions} questions on the topic of "${topic}" with a difficulty level of "${diffLabel}". Each question should have 4 distinct options labeled as 0, 1, 2, 3, with only one correct answer. Provide ${poinstPerQuestion} for each question. For each question, ensure the correct answer is marked with the exact index in the correctOption array. The index of the correct answer must match the position of the correct option in the list of options.Output the response as a JSON object with the following structure {
+  correctOption: 2,
+  options: ["'props'", " 'state'", " 'context'", " 'ref'"],
+  points: 10,
+  question:
+    "Which mechanism allows sharing data between different components in a React application without prop drilling?",
+} `;
 
   useEffect(
     function () {

@@ -10,6 +10,7 @@ import Herosection from "./components/HeroSection";
 import SelectQuantity from "./components/SelectQuantity";
 import SelecetDificulity from "./components/SelecetDificulity";
 import Question from "./components/Question";
+import ScoreBord from "./components/ScoreBord";
 
 const POINT_PER_QUESTION = 10;
 
@@ -65,6 +66,18 @@ function reducer(state, action) {
 
     case "startQuiz":
       return { ...state, stage: "quiz/active" };
+    case "finishQuiz":
+      return { ...state, stage: "quiz/finish" };
+    case "quizRestart":
+      return {
+        ...state,
+        stage: "quiz/ready",
+        answer: null,
+        index: 0,
+        totalPoint: 0,
+      };
+    case "home":
+      return initialState;
 
     default:
       throw new Error("Unkonwn Action type");
@@ -130,6 +143,19 @@ function App() {
             question={allQuestions[index]}
             answer={answer}
             dispatch={dispatch}
+            index={index}
+            totalQuestions={allQuestions.length}
+          />
+        )}
+
+        {stage === "quiz/finish" && (
+          <ScoreBord
+            totalPoint={totalPoint}
+            dispath={dispatch}
+            maxPoint={allQuestions.reduce(
+              (acc, curr) => (acc = acc + curr.points),
+              0
+            )}
           />
         )}
       </Main>

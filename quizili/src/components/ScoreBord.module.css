@@ -1,0 +1,21 @@
+.scoreBord {
+  margin-top: 9.6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6.4rem;
+}
+.btnsContainer {
+  display: flex;
+  gap: 9.6rem;
+}
+.scoreBord p {
+  padding: 2.4rem;
+  width: 70%;
+  font-size: 3.2rem;
+  font-weight: 700;
+  text-align: center;
+  background-color: #6356e5;
+  color: #fff;
+  border-radius: 0.8rem;
+}

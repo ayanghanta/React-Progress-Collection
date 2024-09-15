@@ -1,10 +1,12 @@
 import Button from "./Button";
 
 import styles from "./Question.module.css";
-function Question({ question, answer, dispatch }) {
+function Question({ question, answer, dispatch, index, totalQuestions }) {
+  // console.log(question);
+
   function showCorrentOption(index, correctOption) {
     if (answer === null) return "";
-    return index + 1 === correctOption ? "right" : "wrong";
+    return index === correctOption ? "right" : "wrong";
   }
 
   return (
@@ -16,9 +18,9 @@ function Question({ question, answer, dispatch }) {
             className={`optionBtn ${showCorrentOption(
               i,
               question.correctOption
-            )} ${i + 1 === answer ? "selectedOption" : ""}`}
+            )} ${i === answer ? "selectedOption" : ""}`}
             key={option}
-            onClick={() => dispatch({ type: "giveAnswer", payload: i + 1 })}
+            onClick={() => dispatch({ type: "giveAnswer", payload: i })}
             disabled={answer !== null}
           >
             {option}
@@ -26,9 +28,19 @@ function Question({ question, answer, dispatch }) {
         ))}
       </div>
       <div>
-        <Button type="next" onClick={() => dispatch({ type: "nextQuestion" })}>
-          Next Question &rarr;
-        </Button>
+        {answer !== null && index + 1 !== totalQuestions && (
+          <Button
+            type="next"
+            onClick={() => dispatch({ type: "nextQuestion" })}
+          >
+            Next Question &rarr;
+          </Button>
+        )}
+        {answer !== null && index + 1 === totalQuestions && (
+          <Button type="next" onClick={() => dispatch({ type: "finishQuiz" })}>
+            Finish Quiz
+          </Button>
+        )}
       </div>
     </div>
   );
