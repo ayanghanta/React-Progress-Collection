@@ -1,10 +1,13 @@
 import { useState } from "react";
 import Button from "./Button";
+import { useQuiz } from "../context/QuizContext";
 
 const difficilityOptions = ["Easy", "Medium", "Hard"];
 
-function SelecetDificulity({ dispatch }) {
+function SelecetDificulity() {
+  const { dispatch } = useQuiz();
   const [chooseDiffi, setChooseDiffi] = useState("");
+
   return (
     <div className="quizCustomizeContainer">
       <h2>Select Quiz Difficulty</h2>

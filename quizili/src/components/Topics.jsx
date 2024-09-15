@@ -1,10 +1,13 @@
 import { useState } from "react";
 import Button from "./Button";
+import { useQuiz } from "../context/QuizContext";
 // import styles from "./Topics.module.css";
 
 const quizTopics = ["HTML", "JavaScript", "React", "Python"];
 
-function Topics({ dispatch }) {
+function Topics() {
+  const { dispatch } = useQuiz();
+
   const [choosenTopic, setChoosenTopic] = useState("");
 
   return (

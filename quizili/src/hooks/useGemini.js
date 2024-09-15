@@ -2,25 +2,27 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 import { useEffect, useState } from "react";
 
 import { API_KEY } from "../../config";
+import { useQuiz } from "../context/QuizContext";
 
-export default function useGemini(
-  topic,
-  numQuestions,
-  diffLabel,
-  poinstPerQuestion,
-  dispatch
-) {
+export default function useGemini() {
   const [isLoading, setIsLoading] = useState(false);
   const [question, setQuestions] = useState([]);
   const [error, setError] = useState("");
+  const {
+    quizTopic,
+    numberofQuestions,
+    difficulityLabel,
+    poinstPerQuestion,
+    dispatch,
+  } = useQuiz();
 
   const questionSchema = {
     type: "object",
     properties: {
       quiz: {
         type: "array",
-        minItems: numQuestions, // Ensure at least one question
-        maxItems: numQuestions, // Set a maximum number of questions (adjust as needed)
+        minItems: numberofQuestions, // Ensure at least one question
+        maxItems: numberofQuestions, // Set a maximum number of questions (adjust as needed)
         items: {
           type: "object",
           properties: {
@@ -55,7 +57,7 @@ export default function useGemini(
     },
   });
 
-  const prompt = `Generate a quiz of ${numQuestions} questions on the topic of "${topic}" with a difficulty level of "${diffLabel}". Each question should have 4 distinct options labeled as 0, 1, 2, 3, with only one correct answer. Provide ${poinstPerQuestion} for each question. For each question, ensure the correct answer is marked with the exact index in the correctOption array. The index of the correct answer must match the position of the correct option in the list of options.Output the response as a JSON object with the following structure {
+  const prompt = `Generate a quiz of ${numberofQuestions} questions on the topic of "${quizTopic}" with a difficulty level of "${difficulityLabel}". Each question should have 4 distinct options labeled as 0, 1, 2, 3, with only one correct answer. Provide ${poinstPerQuestion} for each question. For each question, ensure the correct answer is marked with the exact index in the correctOption array. The index of the correct answer must match the position of the correct option in the list of options.Output the response as a JSON object with the following structure {
   correctOption: 2,
   options: ["'props'", " 'state'", " 'context'", " 'ref'"],
   points: 10,

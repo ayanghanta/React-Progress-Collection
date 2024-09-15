@@ -1,21 +1,9 @@
 import styles from "./Loader.module.css";
 import useGemini from "../hooks/useGemini";
 
-function Loader({
-  topic,
-  numQuestions,
-  diffLabel,
-  poinstPerQuestion,
-  dispatch,
-}) {
-  const { question } = useGemini(
-    topic,
-    numQuestions,
-    diffLabel,
-    poinstPerQuestion,
-    dispatch
-  );
-  console.log(question);
+function Loader() {
+  const { question } = useGemini();
+  // console.log(question?.question);
   return (
     <div className={styles.loaderContainer}>
       <span className={styles.loader}></span>

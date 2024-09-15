@@ -1,10 +1,12 @@
 import { useState } from "react";
 import Button from "./Button";
+import { useQuiz } from "../context/QuizContext";
 // import styles from "./SelectQuantity.module.css";
 
 const questionsQuantityOptions = [5, 10, 15, 20];
 
-function SelectQuantity({ dispatch }) {
+function SelectQuantity() {
+  const { dispatch } = useQuiz();
   const [choosenQuantity, setChoosenQuantity] = useState("");
 
   return (
