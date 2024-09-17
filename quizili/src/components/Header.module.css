@@ -16,3 +16,8 @@
   font-family: inherit;
   cursor: pointer;
 }
+@media (max-width: 25em) {
+  .headerContainer ul {
+    display: none;
+  }
+}

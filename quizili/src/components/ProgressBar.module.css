@@ -15,6 +15,12 @@
   margin-top: 1.6rem;
   color: #8278ea;
 }
+@media (max-width: 25em) {
+  .progressContainer p {
+    font-size: 1.8rem;
+  }
+}
+
 /* .progress::-webkit-progress-value {
   background: rgb(218, 128, 54);
 }

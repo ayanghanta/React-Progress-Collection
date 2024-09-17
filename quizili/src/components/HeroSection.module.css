@@ -19,3 +19,11 @@
   line-height: 1.5;
   text-align: center;
 }
+@media (max-width: 25em) {
+  .heroSection h1 {
+    font-size: 3.6rem;
+  }
+  .heroSection p {
+    font-size: 1.6rem;
+  }
+}

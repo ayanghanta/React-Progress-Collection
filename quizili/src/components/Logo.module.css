@@ -1,3 +1,8 @@
 .logo {
   width: 15%;
 }
+@media (max-width: 25em) {
+  .logo {
+    width: 20%;
+  }
+}

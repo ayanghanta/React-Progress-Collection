@@ -102,3 +102,32 @@ body {
   background-color: #f77f00 !important;
   border: 2px solid #f77f00;
 }
+@media (max-width: 31em) {
+  html {
+    font-size: 56.25%;
+  }
+}
+@media (max-width: 25em) {
+  html {
+    font-size: 50%;
+  }
+  .quizCustomizeContainer h2 {
+    font-size: 2.8rem;
+  }
+  .quizCustomizeContainer ul {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 2.4rem;
+  }
+  .quizCustomizeContainer li {
+    font-size: 1.8rem;
+  }
+  .optionBtn {
+    font-size: 2rem;
+  }
+  .optionBtn:hover {
+    border: 1px solid #adb5bd;
+  }
+}
+/* @media (max-width: 25em) {
+  
+} */
