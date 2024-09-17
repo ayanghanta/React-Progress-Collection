@@ -1,6 +1,7 @@
 import { useQuiz } from "../context/QuizContext";
 import Button from "./Button";
 import styles from "./ScoreBord.module.css";
+
 function ScoreBord() {
   const { totalPoint, dispatch, allQuestions } = useQuiz();
 
@@ -8,12 +9,19 @@ function ScoreBord() {
     (acc, curr) => (acc = acc + curr.points),
     0
   );
-  const percent = Math.round((totalPoint / maxPoint) * 100);
+  const percent = (totalPoint / maxPoint) * 100;
+
+  let emoji;
+  if (percent > 0 && percent <= 10) emoji = "😧";
+  if (percent > 10 && percent <= 30) emoji = "🫤";
+  if (percent > 30 && percent <= 60) emoji = "🤨";
+  if (percent > 60 && percent <= 90) emoji = "🤩";
+  if (percent > 90) emoji = "😎🏆";
 
   return (
     <div className={styles.scoreBord}>
       <p>
-        you Score {totalPoint} out of {maxPoint} [{percent}%]
+        {emoji} you Score {totalPoint} out of {maxPoint} ( {percent}% )
       </p>
       <div className={styles.btnsContainer}>
         <Button type="next" onClick={() => dispatch({ type: "quizRestart" })}>

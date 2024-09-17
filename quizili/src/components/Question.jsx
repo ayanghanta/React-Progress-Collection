@@ -1,5 +1,6 @@
 import { useQuiz } from "../context/QuizContext";
 import Button from "./Button";
+import ProgressBar from "./ProgressBar";
 
 import styles from "./Question.module.css";
 function Question() {
@@ -17,6 +18,7 @@ function Question() {
   return (
     <div className={styles.questionContainer}>
       <h2>{question.question}</h2>
+      <ProgressBar />
       <div className={styles.optionsContainer}>
         {question.options.map((option, i) => (
           <button
