@@ -3,16 +3,7 @@ import Button from "./Button";
 import { useQuiz } from "../context/QuizContext";
 // import styles from "./Topics.module.css";
 
-const quizTopics = [
-  "HTML",
-  "JavaScript",
-  "React",
-  "Python",
-  "Java",
-  "Rust",
-  "Swift",
-  "Go",
-];
+const quizTopics = ["HTML", "JavaScript", "React", "Python"];
 
 function Topics() {
   const { dispatch } = useQuiz();

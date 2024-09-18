@@ -25,4 +25,11 @@
   .questionContainer h2 {
     font-size: 2.8rem;
   }
+  .optionsContainer {
+    column-gap: 2.2rem;
+    row-gap: 1.8rem;
+  }
+  .questionContainer button {
+    margin-top: 0;
+  }
 }

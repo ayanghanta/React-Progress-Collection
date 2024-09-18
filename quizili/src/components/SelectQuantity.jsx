@@ -52,7 +52,7 @@ function SelectQuantity() {
         )}
       </div>
 
-      {choosenQuantity !== false && (
+      {!choosenQuantity === false && (
         <Button
           type="next"
           onClick={() =>
