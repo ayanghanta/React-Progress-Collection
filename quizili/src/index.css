@@ -30,6 +30,22 @@ body {
   flex-direction: column;
   align-items: center;
 }
+.otherSelectContainer {
+  display: flex;
+  gap: 2.4rem;
+  align-items: center;
+}
+.otherSelectContainer input {
+  font-family: inherit;
+  text-align: center;
+  font-size: 1.8rem;
+  padding: 0.8rem;
+  width: 50%;
+  border: 1px solid #4f45b7;
+  border-radius: 0.8rem;
+  background-color: #efeefc;
+  font-weight: 500;
+}
 .quizCustomizeContainer h2 {
   font-size: 3.2rem;
   text-align: center;
@@ -43,9 +59,10 @@ body {
   list-style: none;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  column-gap: 2.4rem;
+  row-gap: 2rem;
   align-items: center;
   justify-content: center;
-  column-gap: 2.4rem;
   margin-bottom: 2.4rem;
 }
 .quizCustomizeContainer li {

@@ -3,6 +3,7 @@ import { createContext, useContext, useReducer } from "react";
 const QuizContext = createContext();
 
 const POINT_PER_QUESTION = 10;
+const MAX_QUIZ_QUESTION = 100;
 
 function QuizProvider({ children }) {
   const initialState = {
@@ -34,6 +35,7 @@ function QuizProvider({ children }) {
       case "nextQuestion":
         return { ...state, index: state.index + 1, answer: null };
       case "topicSelected":
+        if (!action.payload || action.payload.length < 2) return { ...state };
         return {
           ...state,
           stage: "choose/quantity",
@@ -44,7 +46,10 @@ function QuizProvider({ children }) {
         return {
           ...state,
           stage: "choose/difficulity",
-          numberofQuestions: action.payload,
+          numberofQuestions:
+            action.payload > MAX_QUIZ_QUESTION
+              ? MAX_QUIZ_QUESTION
+              : action.payload,
         };
 
       case "difficulitySelected":

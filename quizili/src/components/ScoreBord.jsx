@@ -9,7 +9,7 @@ function ScoreBord() {
     (acc, curr) => (acc = acc + curr.points),
     0
   );
-  const percent = (totalPoint / maxPoint) * 100;
+  const percent = Math.floor((totalPoint / maxPoint) * 100);
 
   let emoji;
   if (percent > 0 && percent <= 10) emoji = "😧";

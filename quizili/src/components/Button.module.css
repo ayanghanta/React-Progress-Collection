@@ -7,6 +7,7 @@
 }
 .next {
   font-size: 2rem;
+  margin-top: 2.4rem;
   background-color: #594dce;
   color: #fff;
   cursor: pointer;
@@ -22,6 +23,26 @@
   color: #fff;
   cursor: pointer;
   transition: all 0.3s;
+}
+.choose {
+  font-size: 2rem;
+  font-weight: 600;
+  background-color: #6574ff;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.choose:hover {
+  background-color: #4c5be6;
+}
+
+.chooseSelect {
+  font-size: 2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  background-color: #4c5be6;
+  color: #fff;
 }
 @media (max-width: 25em) {
   .next {

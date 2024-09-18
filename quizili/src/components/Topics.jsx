@@ -3,12 +3,32 @@ import Button from "./Button";
 import { useQuiz } from "../context/QuizContext";
 // import styles from "./Topics.module.css";
 
-const quizTopics = ["HTML", "JavaScript", "React", "Python"];
+const quizTopics = [
+  "HTML",
+  "JavaScript",
+  "React",
+  "Python",
+  "Java",
+  "Rust",
+  "Swift",
+  "Go",
+];
 
 function Topics() {
   const { dispatch } = useQuiz();
 
   const [choosenTopic, setChoosenTopic] = useState("");
+  const [isChooseOther, setChooseOther] = useState(false);
+
+  function handleOptionSelect(topic) {
+    setChooseOther(false);
+    setChoosenTopic(topic);
+  }
+
+  function handleOtherSelect() {
+    setChooseOther(true);
+    setChoosenTopic("");
+  }
 
   return (
     <div className="quizCustomizeContainer">
@@ -18,16 +38,33 @@ function Topics() {
           <TopicCard
             topic={topic}
             key={topic}
-            onChooseTopic={setChoosenTopic}
+            onChooseTopic={handleOptionSelect}
             choosenTopic={choosenTopic}
           />
         ))}
       </ul>
+
+      <div className="otherSelectContainer">
+        <Button
+          type={isChooseOther ? "chooseSelect" : "choose"}
+          onClick={handleOtherSelect}
+        >
+          Other Topic
+        </Button>
+        {isChooseOther && (
+          <input
+            type="text"
+            value={choosenTopic}
+            onChange={(e) => setChoosenTopic(e.target.value)}
+          />
+        )}
+      </div>
+
       {choosenTopic && (
         <Button
           type="next"
           onClick={() =>
-            dispatch({ type: "topicSelected", payload: choosenTopic })
+            dispatch({ type: "topicSelected", payload: choosenTopic.trim() })
           }
         >
           next &rarr;

@@ -8,6 +8,18 @@ const questionsQuantityOptions = [5, 10, 15, 20];
 function SelectQuantity() {
   const { dispatch } = useQuiz();
   const [choosenQuantity, setChoosenQuantity] = useState("");
+  const [isChooseOther, setChooseOther] = useState(false);
+  const MIN_QUIZ_QUESTION = 2;
+
+  function handleChooseOption(quantity) {
+    setChooseOther(false);
+    setChoosenQuantity(quantity);
+  }
+
+  function handleChooseOrther() {
+    setChooseOther(true);
+    setChoosenQuantity("");
+  }
 
   return (
     <div className="quizCustomizeContainer">
@@ -17,12 +29,30 @@ function SelectQuantity() {
           <QuatityCard
             quatity={quatity}
             key={quatity}
-            onChooseQuantity={setChoosenQuantity}
+            onChooseQuantity={handleChooseOption}
             choosenQuantity={choosenQuantity}
           />
         ))}
       </ul>
-      {choosenQuantity && (
+
+      <div className="otherSelectContainer">
+        <Button
+          type={isChooseOther ? "chooseSelect" : "choose"}
+          onClick={handleChooseOrther}
+        >
+          Other Quantity
+        </Button>
+        {isChooseOther && (
+          <input
+            type="number"
+            min={MIN_QUIZ_QUESTION}
+            value={choosenQuantity}
+            onChange={(e) => setChoosenQuantity(+e.target.value)}
+          />
+        )}
+      </div>
+
+      {choosenQuantity !== false && (
         <Button
           type="next"
           onClick={() =>
