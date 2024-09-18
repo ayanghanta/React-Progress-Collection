@@ -4,13 +4,13 @@ This repository serves as a showcase of my React learning journey. I'll continue
 
 ## All Projects 🗃️
 
-| Project Name                                            | Description                                      | Live Demo                                    |
-| ------------------------------------------------------- | ------------------------------------------------ | -------------------------------------------- |
-| [Add Vege🥕](#1-add-vege)                               | A simple app to add vegetables to a list.        | [Add Vege](https://add-vege.netlify.app/)    |
-| [BroBMI🏋️](#2-brobmi-the-gym-bros-bmi-management-app-)  | Track your Body Mass Index (BMI) with style.     | [BroBMI](https://brobmi.netlify.app/)        |
-| [GoalForge🎯](#3-goalforge-your-path-to-achievement-)   | Set goals, track progress, and achieve success.  | [GoalForge](https://goal-forge.netlify.app/) |
-| [SkyCast ☀️🌧️](#4-skycast-your-7-day-weather-forecast-) | Get a 7-day weather forecast in a modern format. | [SkyCast](https://rskycast.netlify.app/)     |
-| [Quizili 🧠](#5-quizili-ai-powered-quiz-app-)           | AI-powered quiz with customizable options.       | [Quizili](https://quizili.netlify.app/)      |
+| Project Name                                                              | Description                                      | Live Demo                                    |
+| ------------------------------------------------------------------------- | ------------------------------------------------ | -------------------------------------------- |
+| [Add Vege🥕](#1-add-vege)                                                 | A simple app to add vegetables to a list.        | [Add Vege](https://add-vege.netlify.app/)    |
+| [BroBMI🏋️](#2-brobmi-the-gym-bros-bmi-management-app-)                    | Track your Body Mass Index (BMI) with style.     | [BroBMI](https://brobmi.netlify.app/)        |
+| [GoalForge🎯](#3-goalforge-your-path-to-achievement-)                     | Set goals, track progress, and achieve success.  | [GoalForge](https://goal-forge.netlify.app/) |
+| [SkyCast ☀️🌧️](#4-skycast-your-7-day-weather-forecast-%EF%B8%8F%EF%B8%8F) | Get a 7-day weather forecast in a modern format. | [SkyCast](https://rskycast.netlify.app/)     |
+| [Quizili 🧠](#5-quizili-ai-powered-quiz-app-)                             | AI-powered quiz with customizable options.       | [Quizili](https://quizili.netlify.app/)      |
 
 ### **1. Add Vege🥕**
 
@@ -105,7 +105,7 @@ BroBIM is a simple React app that helps gym enthusiasts keep track of their Body
 - API Integration
 - Controlled Inputs
 
-### Quizili: AI-Powered Quiz App 🧠
+### **5. Quizili: AI-Powered Quiz App 🧠**
 
 Quizili is an AI-powered quiz app that allows users to customize their quiz experience by selecting topics and question quantities, or generating quizzes on any topic of their choice.
 
