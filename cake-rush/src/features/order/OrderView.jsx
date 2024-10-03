@@ -1,12 +1,12 @@
 import { useLoaderData, useParams } from "react-router-dom";
 import { getOrder } from "../../services/apiCakeRush";
 import {
-  calcDeliveryTime,
-  calcOrderStatus,
+  calcDeliveryStatus,
   formatCurrency,
   formatDate,
 } from "../../utils/helper";
 import OrderItem from "./OrderItem";
+import UpdateOrder from "./UpdateOrder";
 
 function OrderView() {
   const data = useLoaderData();
@@ -20,6 +20,9 @@ function OrderView() {
     );
 
   const order = data.at(0);
+  const { delivaryText, delivarySatus, isDelivared } = calcDeliveryStatus(
+    order.deliveryTime
+  );
 
   // HVMWGH // RpY8Nc // 888fLN
   return (
@@ -35,14 +38,12 @@ function OrderView() {
             </p>
           )}
           <p className="bg-green-500 text-slate-50 px-2 py-1 rounded-full uppercase">
-            {calcOrderStatus(order.deliveryTime)}
+            {delivarySatus}
           </p>
         </div>
       </div>
       <div className="px-4 py-8 bg-slate-200 flex items-center justify-between mb-8">
-        <p className="font-semibold text-slate-800">
-          {calcDeliveryTime(order.deliveryTime)}
-        </p>
+        <p className="font-semibold text-slate-800">{delivaryText}</p>
         <p className="text-xs md:text:sm text-slate-500">
           (Estimted delivery: {formatDate(order.deliveryTime)})
         </p>
@@ -68,6 +69,8 @@ function OrderView() {
           Total cash on delivary: {formatCurrency(order.totalBill)}
         </p>
       </div>
+
+      {!order.priority && !isDelivared && <UpdateOrder />}
     </div>
   );
 }

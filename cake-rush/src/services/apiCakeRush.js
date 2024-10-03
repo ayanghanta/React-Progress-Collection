@@ -1,4 +1,5 @@
-const BASE_URL = "http://localhost:3000/api/v1";
+// const BASE_URL = "http://localhost:3000/api/v1";
+const BASE_URL = "https://cake-rush-api-2.onrender.com/api/v1";
 
 export async function getMenu() {
   try {
@@ -35,8 +36,24 @@ export async function createOrder(order) {
 
     const data = await res.json();
 
-    return data;
+    return data.data.order;
   } catch (err) {
     throw new Error(`Something went wrong in placing your order`);
+  }
+}
+
+export async function updateOrder(orderId, updateObj) {
+  try {
+    const res = await fetch(`${BASE_URL}/orders/${orderId}`, {
+      method: "PATCH",
+      body: JSON.stringify(updateObj),
+      headers: {
+        "Content-type": "application/json",
+      },
+    });
+
+    const data = await res.json();
+  } catch (err) {
+    throw new Error(`Can't make your order priority`);
   }
 }

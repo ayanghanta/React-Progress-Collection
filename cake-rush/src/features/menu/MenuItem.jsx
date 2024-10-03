@@ -26,7 +26,7 @@ function MenuItem({ cake }) {
   return (
     <li className="flex py-2 gap-4">
       <img
-        src={`http://localhost:3000/${cake.image}`}
+        src={`https://cake-rush-api-2.onrender.com${cake.image}`}
         alt={`image of ${cake.name}`}
         className="w-28"
       />
