@@ -24,20 +24,22 @@ function MenuItem({ cake }) {
   }
 
   return (
-    <li className="flex py-2 gap-4">
+    <li className="flex py-2 gap-4 items-start">
       <img
         src={`https://cake-rush-api-2.onrender.com${cake.image}`}
         alt={`image of ${cake.name}`}
         className="w-28"
       />
       <div className="flex grow flex-col pt-0.5">
-        <h2 className="text-lg font-semibold text-slate-800">{cake.name}</h2>
-        <p className="italic text-slate-500 text-sm">
+        <h2 className="sm:text-lg font-semibold text-slate-800">{cake.name}</h2>
+        <p className="italic text-slate-500 text-xs sm:text-sm">
           {cake.ingredients.join(", ")}
         </p>
 
-        <div className="mt-auto flex items-center justify-between">
-          <p className="text-slate-700">{formatCurrency(cake.price)}</p>
+        <div className="mt-auto sm:flex sm:items-center sm:justify-between">
+          <p className="text-slate-700 mt-3 sm:mt-0 mb-2 sm:mb-0">
+            {formatCurrency(cake.price)}
+          </p>
 
           {isInCart ? (
             <CartModify cakeId={cake._id} cakeQuantity={itemQuantity} />

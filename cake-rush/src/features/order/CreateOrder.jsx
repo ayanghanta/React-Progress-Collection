@@ -39,7 +39,7 @@ function CreateOrder() {
         Ready to order? Let&apos;s go!
       </p>
       <Form method="POST">
-        <div className="flex items-center gap-3 mb-5 mt-8">
+        <div className="sm:flex items-center gap-3 mb-5 mt-8">
           <label htmlFor="name" className="basis-32 sm:basis-40">
             First Name
           </label>
@@ -55,7 +55,7 @@ function CreateOrder() {
           </div>
         </div>
 
-        <div className="flex items-center gap-3 mb-5">
+        <div className="sm:flex items-center gap-3 mb-5">
           <label htmlFor="phone" className="basis-32 sm:basis-40">
             Phone number
           </label>
@@ -70,7 +70,7 @@ function CreateOrder() {
           </div>
         </div>
 
-        <div className="flex items-center gap-3 mb-5 relative">
+        <div className="sm:flex items-center gap-3 mb-5 relative">
           <label htmlFor="address" className="basis-32 sm:basis-40">
             Address
           </label>
@@ -92,7 +92,7 @@ function CreateOrder() {
 
           {!position.lng && !position.lat && (
             <button
-              className="absolute right-0.5 md:1 bg-blue-400 px-2 py-1.5 rounded-full hover:bg-blue-500 transition duration-300 top-[3px]"
+              className="absolute right-0.5 md:1 bg-blue-400 px-2 py-1.5 rounded-full hover:bg-blue-500 transition duration-300 sm:top-[3px] top-[27px]"
               onClick={handleGetAddress}
             >
               {isLoactionLoading ? "Getting location.." : "Get Location"}

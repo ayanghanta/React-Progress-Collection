@@ -1,11 +1,15 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    fontFamily:{
-      sans:["Noto Sans Mono", 'monospace']
+    fontFamily: {
+      sans: ["Noto Sans Mono", "monospace"],
     },
-    extend: {},
+    extend: {
+      height: {
+        screen: "100dvh",
+      },
+    },
   },
   plugins: [],
 };

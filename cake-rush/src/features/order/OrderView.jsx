@@ -27,23 +27,25 @@ function OrderView() {
   // HVMWGH // RpY8Nc // 888fLN
   return (
     <div className="mt-8">
-      <div className="flex items-center justify-between mb-8">
+      <div className="flex items-start sm:items-center justify-between mb-8">
         <p className="text-xl font-semibold text-slate-700">
           Order #{orderId} status
         </p>
-        <div className="flex items-center gap-2">
+        <div className="flex flex-col sm:flex-row sm:items-center gap-2">
           {order.priority && (
-            <p className="bg-rose-400 text-slate-50 px-2 py-1 rounded-full uppercase">
+            <p className="bg-rose-400 text-slate-50 px-2 py-1 rounded-full uppercase sm:text-sm text-xs text-center">
               priority
             </p>
           )}
-          <p className="bg-green-500 text-slate-50 px-2 py-1 rounded-full uppercase">
+          <p className="bg-green-500 text-slate-50 px-2 py-1 rounded-full uppercase sm:text-sm text-xs text-center">
             {delivarySatus}
           </p>
         </div>
       </div>
-      <div className="px-4 py-8 bg-slate-200 flex items-center justify-between mb-8">
-        <p className="font-semibold text-slate-800">{delivaryText}</p>
+      <div className="px-4 py-8 bg-slate-200 sm:flex sm:items-center sm:justify-between mb-8">
+        <p className="font-semibold text-slate-800 mb-4 sm:mb-0">
+          {delivaryText}
+        </p>
         <p className="text-xs md:text:sm text-slate-500">
           (Estimted delivery: {formatDate(order.deliveryTime)})
         </p>
@@ -65,7 +67,7 @@ function OrderView() {
             ? formatCurrency(order.totalItemsPrice * 0.2)
             : formatCurrency(0)}
         </p>
-        <p className="font-semibold text-slate-700">
+        <p className="font-semibold text-slate-700 text-sm sm:text-base">
           Total cash on delivary: {formatCurrency(order.totalBill)}
         </p>
       </div>
