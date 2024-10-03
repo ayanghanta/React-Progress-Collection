@@ -1,4 +1,5 @@
 // const BASE_URL = "http://localhost:3000/api/v1";
+//https://cake-rush-api-2.onrender.com
 const BASE_URL = "https://cake-rush-api-2.onrender.com/api/v1";
 
 export async function getMenu() {
