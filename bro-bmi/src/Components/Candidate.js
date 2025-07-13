@@ -43,9 +43,6 @@ export default function Candidate({ candidate, onUpdate, onDelete }) {
           <Button color={"red"} onClick={() => onDelete(candidate.id)}>
             Delete
           </Button>
-          <Button color={"blue"} onClick={() => setIsFormOpen((o) => !o)}>
-            {isFormOpen ? "Close" : "Update"}
-          </Button>
         </div>
       </div>
     </div>
